@@ -1,0 +1,65 @@
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #c8b8a6;
+    display: flex; flex-direction: column; align-items: center;
+    min-height: 100vh; padding: 24px; gap: 16px;
+  }
+  .wb-scheme-bar {
+    display: flex; align-items: center; gap: 12px;
+    background: rgba(255,255,255,0.92); padding: 12px 20px; border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    width: 100%; max-width: 720px; justify-content: space-between; flex-wrap: wrap;
+  }
+  .wb-scheme-label { font-size: 13px; font-weight: 500; color: #666; }
+  .wb-scheme-text { font-size: 16px; font-weight: 500; color: #111; font-style: italic; }
+  .wb-frame {
+    position: relative; padding: 14px;
+    background: linear-gradient(135deg, #8B5A2B 0%, #A0522D 25%, #8B4513 50%, #A0522D 75%, #8B5A2B 100%);
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.15);
+    border: 1px solid #5D3A1A;
+  }
+  .wb-frame::before {
+    content: ''; position: absolute; top: 4px; left: 4px; right: 4px; bottom: 4px;
+    border: 1px solid rgba(0,0,0,0.25); border-radius: 2px; pointer-events: none;
+  }
+  #whiteboard {
+    background: #f8f8f8; border-radius: 2px; cursor: crosshair; display: block;
+    box-shadow: inset 0 0 12px rgba(0,0,0,0.08);
+  }
+  .wb-toolbar {
+    display: flex; align-items: center; gap: 12px;
+    background: rgba(255,255,255,0.9); padding: 12px 18px; border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    flex-wrap: wrap; justify-content: center; width: 100%; max-width: 720px;
+  }
+  .wb-color-btn {
+    width: 26px; height: 26px; border-radius: 50%; border: 2px solid transparent;
+    cursor: pointer; transition: transform 0.15s, border-color 0.15s; box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  }
+  .wb-color-btn:hover { transform: scale(1.15); }
+  .wb-color-btn.active { border-color: #111; transform: scale(1.2); }
+  .wb-size-wrap { display: flex; align-items: center; gap: 6px; }
+  .wb-size-wrap label { font-size: 12px; color: #555; font-weight: 500; }
+  .wb-size-wrap input[type=range] { width: 80px; accent-color: #111; }
+  .wb-size-preview { width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; }
+  .wb-size-dot { border-radius: 50%; background: #111; transition: width 0.15s, height 0.15s; }
+  .wb-btn {
+    padding: 7px 14px; border-radius: 8px; border: 1px solid #ddd;
+    background: #fff; color: #111; font-size: 13px; font-weight: 500;
+    cursor: pointer; transition: background 0.15s, box-shadow 0.15s;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .wb-btn:hover { background: #f5f5f5; box-shadow: 0 1px 4px rgba(0,0,0,0.08); }
+  .wb-btn.accent { background: #111; color: #fff; border-color: #111; }
+  .wb-btn.accent:hover { background: #333; }
+  .wb-btn.secondary { border-color: #c00; color: #c00; }
+  .wb-btn.secondary:hover { background: rgba(204,0,0,0.06); }
+  .wb-write-wrap { display: flex; align-items: center; gap: 6px; }
+  .wb-write-wrap input {
+    padding: 6px 12px; border-radius: 6px; border: 1px solid #ddd;
+    font-size: 14px; width: 150px; outline: none;
+  }
+  .wb-write-wrap input:focus { border-color: #111; box-shadow: 0 0 0 2px rgba(0,0,0,0.05); }
+  .wb-hint { font-size: 12px; color: #888; text-align: center; }

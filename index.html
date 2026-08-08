@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matt's Whiteboard — The Plan</title>
+<link rel="stylesheet" href="style.css">
+<base target="_blank">
+</head>
+<body>
+
+<div class="wb-scheme-bar">
+  <div style="display:flex;align-items:center;gap:10px;">
+    <span class="wb-scheme-label">Scheme:</span>
+    <span class="wb-scheme-text" id="schemeText">Click "New scheme" to get started</span>
+  </div>
+  <button class="wb-btn accent" id="newSchemeBtn">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+    New scheme
+  </button>
+</div>
+
+<div class="wb-frame">
+  <canvas id="whiteboard" width="680" height="420"></canvas>
+</div>
+
+<div class="wb-toolbar">
+  <div style="display:flex;gap:5px;align-items:center;">
+    <div class="wb-color-btn active" data-color="#1a1a1a" style="background:#1a1a1a;" title="Black"></div>
+    <div class="wb-color-btn" data-color="#c41e3a" style="background:#c41e3a;" title="Red"></div>
+    <div class="wb-color-btn" data-color="#1e40af" style="background:#1e40af;" title="Blue"></div>
+    <div class="wb-color-btn" data-color="#15803d" style="background:#15803d;" title="Green"></div>
+    <div class="wb-color-btn" data-color="#7c3aed" style="background:#7c3aed;" title="Purple"></div>
+  </div>
+  <div class="wb-size-wrap">
+    <label>Marker</label>
+    <input type="range" id="brushSize" min="2" max="16" value="4" step="1">
+    <div class="wb-size-preview"><div class="wb-size-dot" id="sizeDot" style="width:4px;height:4px;"></div></div>
+  </div>
+  <div class="wb-write-wrap">
+    <input type="text" id="typeInput" placeholder="Type step..." maxlength="50">
+    <button class="wb-btn" id="writeBtn">Write</button>
+  </div>
+  <button class="wb-btn" id="downloadBtn">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Download
+  </button>
+  <button class="wb-btn secondary" id="clearBtn">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+    Clear
+  </button>
+</div>
+<div class="wb-hint">Draw your steps to pull off the scheme and get a show at The Rivoli.</div>
+
+<script src="script.js"></script>
+</body>
+</html>
